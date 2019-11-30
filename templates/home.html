@@ -3,17 +3,34 @@
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
     <style media="screen">
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+      }
+      #map {
+        height: 100%;
+      }
       .header {
-        background-image: url('static/AerialShotOfComplex.jpg');
+        background-image: url('static/whiteRose.jpg');
         background-repeat: no-repeat;
         background-size: cover;
-        font-family: 'Great Vibes', cursive;
-        text-align: center;
+        background-position: bottom;
         font-size: 48px;
-        color: white;
-        text-shadow: 2px 2px 4px #000000;
+        /* text-shadow: 2px 2px 4px #000000; */
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
       }
     </style>
   </head>
@@ -21,10 +38,96 @@
     <div class="header">
       <br>
       <div style="font-size: 96px;">James & Andreea</div>
+      are getting married
       <hr style="height:10px; visibility:hidden;">
       18 July 2020
       <hr style="height:10px; visibility:hidden;">
       Poggio del Bolognino <br> Umbria <br> Italy <br><br>
     </div>
+    <div style="font-size: 22px;background-image: url('static/grey.jpg'); background-repeat: no-repeat; background-size: cover;">
+      <br>
+      <img src="static/roseDivider.png" alt="leaf" width="300">
+      <h2>When?</h2>
+      <p style="padding: 0px 100px;">
+        Our wedding day will be on Saturday 18 July 2020.
+        <br>
+        However, we have booked the farmhouse out for a full week
+        and we would love for you to join us for as long as you are able.
+        <br>
+        <b>Check-in</b>: Thursday 16 July, 2pm
+        <br>
+        <b>Check-out</b>: Thursday 23 July, 10am
+      </p>
+      <img src="static/roseDivider.png" alt="leaf" width="300">
+      <h2>Where?</h2>
+      <img src="static/AerialShotOfComplex.jpg" alt="farm" width="50%">
+      <p style="padding: 0px 100px;">
+        The venue is
+        <a href="https://www.poggiodelbolognino.it/en/" target="_blank">Poggio del Bolognino</a>
+        , a farmhouse nestled in the beautiful Umbrian hills of Central Italy.
+        We have exclusive use of the farmhouse for the full week.
+        There is a private pool, so don't forget to pack your swimwear!
+        There is also a small children's playground for the little ones
+        with swings and a see-saw, table tennis and free use of bicycles.
+      </p>
+      <br>
+    </div>
+    <div id="map"></div>
+    <div style="font-size: 22px;background-image: url('static/grey.jpg'); background-repeat: no-repeat; background-size: cover;">
+      <br>
+      <img src="static/roseDivider.png" alt="leaf" width="300">
+      <h2>How to get there</h2>
+      <p style="padding: 0px 100px;">
+        1. Fly to Rome! We've put together a handy list of
+        <a href="/flights-out" target="_blank">outward</a> and
+        <a href="/flights-return" target="_blank">return</a>
+        flights, for all the airports we think our guests might use,
+        for check-in and check-out day. If you need to arrive on the Friday or
+        leave earlier than the Thursday, you can use
+        <a href="https://www.skyscanner.net" target="_blank">Skyscanner</a>
+        to look for flights on the days you need.
+        <br>
+        2. We're working on sorting out transfers between the airport(s)
+        and the farmhouse. We'll update this website with more details later.
+      </p>
+      <img src="static/roseDivider.png" alt="leaf" width="300">
+      <h2>RSVP</h2>
+      <p style="padding: 0px 100px;">
+        You can email jamdreeaoneill@gmail.com. Or, you know, just text one of us. it is 2020.
+      </p>
+      <img src="static/roseDivider.png" alt="leaf" width="300">
+      <h2>Dress code</h2>
+      <p style="padding: 0px 100px;">
+        Italy in July is likely to be pretty hot, so don't bake yourself in a 3-piece suit!
+        Think light-coloured shirts / lightweight dresses. As for the rest of the week,
+        wear what you like!
+      </p>
+      <img src="static/roseDivider.png" alt="leaf" width="300">
+      <h2>Gifts</h2>
+      <p style="padding: 0px 100px;">
+        Your presence at our wedding is honestly all we could ask for,
+        especially as you are travelling such long distances to be there.
+        However, if you really want to gift us something, a small contribution
+        to our honeymoon would be greatly apppreciated :)
+      </p>
+      <br>
+      <br>
+    </div>
+    <script>
+      function initMap() {
+        var myLatLng = {lat: 42.5667, lng: 12.3022};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: myLatLng
+        });
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Poggio del Bolognino'
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpxDgGXZ_zbMGeXWjqTq54t2Oo5kH5Jz4&callback=initMap"
+    async defer></script>
   </body>
 </html>
