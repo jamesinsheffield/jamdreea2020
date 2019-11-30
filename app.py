@@ -6,6 +6,10 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/rom')
+def rom():
+    return render_template('rom.html')
+
 @app.route('/flights-out')
 def flights_out():
     return render_template('flights-out.html')
